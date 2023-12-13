@@ -120,6 +120,10 @@ char **strg_tok_1(char *, char);
 char **strg_tok(char *, char *);
 char **strg_tok_1(char *, char);
 
-
+/* memory_handler.c */
+char *set_mem(char *, char, unsigned int);
+void free_strg(char **);
+void *mem_realoc(void *, unsigned int, unsigned int);
+int free_mem(void **);
 
 #endif
