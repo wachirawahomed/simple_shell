@@ -126,4 +126,22 @@ void free_strg(char **);
 void *mem_realoc(void *, unsigned int, unsigned int);
 int free_mem(void **);
 
+/* my_strings.c */
+int str_lenght(char *);
+int str_comp(char *, char *);
+char *str_search(const char *, const char *);
+char *str_concat(char *, char *);
+
+/* my_strings1.c */
+char *str_copy(char *, char *);
+char *str_duplic(const char *);
+void _prstr(char *);
+int _prtchar(char);
+
+/* my_strings2.c */
+char *strgcopy(char *, char *, int);
+char *strgconcat(char *, char *, int);
+char *strgchar(char *, char);
+
+
 #endif
