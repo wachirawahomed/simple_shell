@@ -74,6 +74,12 @@ typedef struct shell_infor
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
+/* shell_loop.c */
+int sh_loop(sh_infor *, char **);
+int get_builtin(sh_infor *);
+void get_cmd(sh_infor *);
+void _fork(sh_infor *);
+
 
 
 
