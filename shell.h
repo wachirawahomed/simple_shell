@@ -143,5 +143,17 @@ char *strgcopy(char *, char *, int);
 char *strgconcat(char *, char *, int);
 char *strgchar(char *, char);
 
+/* sh_mode.c */
+int intera_mode(sh_infor *);
+int delim_check(char, char *);
+int check_alpha(int);
+int str_int(char *);
+
+/* sh_builtin.c */
+int exit_cmd(sh_infor *);
+int cd_cmd(sh_infor *);
+int help_cmd(sh_infor *);
+int sh_history(sh_infor *);
+int alias_mycmd(sh_infor *);
 
 #endif
