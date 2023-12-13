@@ -156,4 +156,20 @@ int help_cmd(sh_infor *);
 int sh_history(sh_infor *);
 int alias_mycmd(sh_infor *);
 
+ssize_t get_uxinput(sh_infor *);
+int myget_line(sh_infor *, char **, size_t *);
+void handle_signint(int);
+
+void clr_infor(sh_infor *);
+void set_shinfor(sh_infor *, char **);
+void free_shinfor(sh_infor *, int);
+
+char *get_shenv(sh_infor *, const char *);
+int prt_currenv(sh_infor *);
+int set_newenv(sh_infor *);
+int remove_env(sh_infor *);
+int fill_env_ll(sh_infor *);
+
+
+
 #endif
