@@ -98,5 +98,20 @@ char *convt_num(long int, int, int);
 void prt_error(sh_infor *, char *);
 void remove_cmmt(char *);
 
+/* llist_handler.c */
+llists_l *add_start_node(llists_l **, const char *, int);
+llists_l *add_end_node(llists_l **, const char *, int);
+size_t prt_list_strg(const llists_l *);
+int del_node_in_idx(llists_l **, unsigned int);
+void free_llist(llists_l **);
+
+/* llist_handler1.c */
+size_t get_list_length(const llists_l *);
+char **linkdlists_to_strg(llists_l *);
+size_t prt_llist_l(const llists_l *);
+llists_l *get_nd_with_prefix(llists_l *, char *, char);
+ssize_t node_at_indx(llists_l *, llists_l *);
+
+
 
 #endif
