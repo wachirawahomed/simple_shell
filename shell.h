@@ -85,7 +85,18 @@ int is_exctbl(sh_infor *, char *);
 char *cha_dupli(char *, int, int);
 char *get_path(sh_infor *, char *, char *);
 
+/* error_handle.c */
+void eprt_str(char *);
+int eprt_char(char);
+int wrt_fd(char c, int fdes);
+int prt_fd(char *str, int fdes);
+int err_atoi(char *);
 
+/* error_handle1.c */
+int prt_deci(int, int);
+char *convt_num(long int, int, int);
+void prt_error(sh_infor *, char *);
+void remove_cmmt(char *);
 
 
 #endif
