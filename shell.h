@@ -80,6 +80,11 @@ int get_builtin(sh_infor *);
 void get_cmd(sh_infor *);
 void _fork(sh_infor *);
 
+/* cmd_parser.c */
+int is_exctbl(sh_infor *, char *);
+char *cha_dupli(char *, int, int);
+char *get_path(sh_infor *, char *, char *);
+
 
 
 

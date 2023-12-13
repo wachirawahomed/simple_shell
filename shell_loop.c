@@ -48,9 +48,9 @@ int sh_loop(sh_infor *data, char **avec)
  * @data: the parameter & return data struct
  *
  * Return: -1 if builtin not found,
- * 	0 if builtin executed successfully,
- * 	1 if builtin found but not successful,
- * 	2 if builtin signals exit()
+ * 0 if builtin executed successfully,
+ * 1 if builtin found but not successful,
+ * 2 if builtin signals exit()
  */
 int get_builtin(sh_infor *data)
 {
@@ -110,7 +110,7 @@ void get_cmd(sh_infor *data)
 	{
 		if ((intera_mode(data) || get_shenv(data, "PATH=")
 					|| data->argv[0][0] == '/')
-				&& is_cmd(data, data->argv[0]))
+				&& is_exctbl(data, data->argv[0]))
 			_fork(data);
 		else if (*(data->cmd_arg) != '\n')
 		{
