@@ -112,6 +112,14 @@ size_t prt_llist_l(const llists_l *);
 llists_l *get_nd_with_prefix(llists_l *, char *, char);
 ssize_t node_at_indx(llists_l *, llists_l *);
 
+/* token_handler.c */
+char **strg_tok(char *, char *);
+char **strg_tok_1(char *, char);
+
+/* token_handler.c */
+char **strg_tok(char *, char *);
+char **strg_tok_1(char *, char);
+
 
 
 #endif

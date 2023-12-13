@@ -44,7 +44,7 @@ int prt_deci(int input, int fdes)
 	crrt = _ab;
 	for (idx = 1000000000; idx > 1; idx /= 10)
 	{
-		if (_ab/ idx)
+		if (_ab / idx)
 		{
 			__putchar('0' + crrt / idx);
 			cnt++;
