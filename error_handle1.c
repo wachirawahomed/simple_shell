@@ -35,7 +35,7 @@ int prt_deci(int input, int fdes)
 		__putchar = eprt_char;
 	if (input < 0)
 	{
-		_abs_ = -input;
+		_ab = -input;
 		__putchar('-');
 		cnt++;
 	}

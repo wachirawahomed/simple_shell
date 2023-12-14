@@ -64,8 +64,8 @@ char **strg_tok_1(char *strg, char delm)
 		return (NULL);
 	for (idx = 0; strg[idx] != '\0'; idx++)
 		if ((strg[idx] != delm && strg[idx + 1] == delm)
-				|| strg[idx] != delm && !strg[idx + 1])
-			|| strg[idx + 1] == delm)
+				|| (strg[idx] != delm && !strg[idx + 1])
+				|| strg[idx + 1] == delm)
 			no_words++;
 	if (no_words == 0)
 		return (NULL);

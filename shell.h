@@ -12,6 +12,29 @@
 #include <fcntl.h>
 #include <errno.h>
 
+extern char **environ;
+
+/* read and write buffers */
+#define READ_BUFFER 1024
+#define WRITE_BUFFER 1024
+#define BUFFER_FLUSH -1
+
+/* command chaining */
+#define COMMAD_NORM		0
+#define COMMAND_OR		1
+#define COMMAND_AND		2
+#define COMMAND_CHAIN	3
+
+/* convt_num() */
+#define LOWERCASE_CONV	1
+#define UNSIGNED_CONV	2
+
+/* 1 if using system getline() */
+#define USE_GETLINE 0
+/* #define USE_STRTOK 0 */
+
+#define HISTORY_FILE	".simple_shell_history"
+#define HISTORY_BUFFER_MAX	4096
 
 /**
  * struct lists_s - singly linked list
@@ -73,6 +96,17 @@ typedef struct shell_infor
 #define SH_INFOR_INITI \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
+
+/**
+ * struct builtin_cmd - contains a builtin string and related function
+ * @type: the builtin command fg
+ * @func: the function
+ */
+typedef struct builtin_cmd
+{
+	char *type;
+	int (*func)(sh_infor *);
+} builtin_cmd_tbl;
 
 /* shell_loop.c */
 int sh_loop(sh_infor *, char **);
@@ -170,6 +204,20 @@ int set_newenv(sh_infor *);
 int remove_env(sh_infor *);
 int fill_env_ll(sh_infor *);
 
+char **_getmyenviron(sh_infor *);
+int _myenv_unset(sh_infor *, char *);
+int init_shenv(sh_infor *, char *, char *);
 
+char *get_sh_history(sh_infor *data);
+int wrt_history(sh_infor *data);
+int rd_history(sh_infor *data);
+int create_histo_lst(sh_infor *data, char *buff, int linecount);
+int update_histo_no(sh_infor *data);
+
+int test_if_delim(sh_infor *, char *, size_t *);
+void chk_chain(sh_infor *, char *, size_t *, size_t, size_t);
+int update_alias(sh_infor *);
+int update_vars(sh_infor *);
+int update_string(char **, char *);
 
 #endif
